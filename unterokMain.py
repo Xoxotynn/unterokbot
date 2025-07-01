@@ -13,7 +13,7 @@ from telegram.ext import (
 )
 from openai import OpenAI
 
-load_dotenv(dotenv_path="/etc/unterok-bot.env")
+load_dotenv()
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
