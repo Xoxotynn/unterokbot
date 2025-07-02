@@ -69,7 +69,7 @@ async def generate_hate(text: str) -> str:
     stop=stop_after_attempt(4),
     wait=wait_exponential(multiplier=2, min=3, max=10),
     before_sleep=lambda retry_state: logger.warning(
-        f"Retry #{retry_state.attempt_number} after generating AI response failure"
+        f"Retry #{retry_state.attempt_number} after generating AI response failure with error: {retry_state.outcome.exception()}"
     )
 )
 async def generate_ai_hate_with_retry(text: str) -> str:
